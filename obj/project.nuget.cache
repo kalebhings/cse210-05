@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "A8AZt4Qj5L5czOf7Cik945038ZKtiuL0ZTDEBu9LqfK/6zyHk42cMYDa87xO6u/OQ2Ek++yZFI/3F5llVMVcEA==",
+  "success": true,
+  "projectFilePath": "/Users/admin/OneDrive - BYU-Idaho/Programming/CSE 210/cse210-05/cse210-05.csproj",
+  "expectedPackageFiles": [
+    "/Users/admin/.nuget/packages/raylib-cs/3.7.0.1/raylib-cs.3.7.0.1.nupkg.sha512",
+    "/Users/admin/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/admin/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.17/microsoft.netcore.app.host.osx-x64.5.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}
