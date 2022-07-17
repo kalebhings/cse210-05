@@ -2,20 +2,13 @@ using System;
 using cse210_05.Game.Casting;
 using cse210_05.Game.Services;
 
-
 namespace cse210_05.Game.Scripting
 {
-    /// <summary>
-    /// <para>An input action that controls the snake.</para>
-    /// <para>
-    /// The responsibility of ControlActorsAction is to get the direction and move the snake's head.
-    /// </para>
-    /// </summary>
     public class ControlActorsAction : Action
     {
         private KeyboardService keyboardService;
-        private Point direction1 = new Point(0, -Constants.CELL_SIZE);
-        private Point direction2 = new Point(0, -Constants.CELL_SIZE);
+        private Point direction_1 = new Point(0, -Constants.CELL_SIZE);
+        private Point direction_2 = new Point(0, -Constants.CELL_SIZE);
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
@@ -31,56 +24,56 @@ namespace cse210_05.Game.Scripting
             // left Player 1
             if (keyboardService.IsKeyDown("a"))
             {
-                direction1 = new Point(-Constants.CELL_SIZE, 0);
+                direction_1 = new Point(-Constants.CELL_SIZE, 0);
             }
 
             // right Player 1
             if (keyboardService.IsKeyDown("d"))
             {
-                direction1 = new Point(Constants.CELL_SIZE, 0);
+                direction_1 = new Point(Constants.CELL_SIZE, 0);
             }
 
             // up Player 1
             if (keyboardService.IsKeyDown("w"))
             {
-                direction1 = new Point(0, -Constants.CELL_SIZE);
+                direction_1 = new Point(0, -Constants.CELL_SIZE);
             }
 
             // down Player 1
             if (keyboardService.IsKeyDown("s"))
             {
-                direction1 = new Point(0, Constants.CELL_SIZE);
+                direction_1 = new Point(0, Constants.CELL_SIZE);
             }
-
-
+        
+        
             // left Player 2
-            if (keyboardService.IsKeyDown("a"))
+            if (keyboardService.IsKeyDown("j"))
             {
-                direction2 = new Point(-Constants.CELL_SIZE, 0);
+                direction_2 = new Point(-Constants.CELL_SIZE, 0);
             }
 
             // right Player 2
-            if (keyboardService.IsKeyDown("d"))
+            if (keyboardService.IsKeyDown("l"))
             {
-                direction2 = new Point(Constants.CELL_SIZE, 0);
+                direction_2 = new Point(Constants.CELL_SIZE, 0);
             }
 
             // up Player 2
-            if (keyboardService.IsKeyDown("w"))
+            if (keyboardService.IsKeyDown("i"))
             {
-                direction2 = new Point(0, -Constants.CELL_SIZE);
+                direction_2 = new Point(0, -Constants.CELL_SIZE);
             }
 
             // down Player 2
-            if (keyboardService.IsKeyDown("s"))
+            if (keyboardService.IsKeyDown("k"))
             {
-                direction2 = new Point(0, Constants.CELL_SIZE);
+                direction_2 = new Point(0, Constants.CELL_SIZE);
             }
 
-            Cycle cycle1 = (Cycle)cast.GetFirstActor("cycle1");
-            cycle1.TurnHead(direction1);
-            Cycle cycle2 = (Cycle)cast.GetFirstActor("cycle2");
-            cycle2.TurnHead(direction2);
+            Cycle cycle_1 = (Cycle)cast.GetFirstActor("cycle_1");
+            cycle_1.TurnHead(direction_1);
+            Cycle cycle_2 = (Cycle)cast.GetFirstActor("cycle_2");
+            cycle_2.TurnHead(direction_2);
 
         }
     }

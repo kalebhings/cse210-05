@@ -4,16 +4,8 @@ using System.Data;
 using cse210_05.Game.Casting;
 using cse210_05.Game.Services;
 
-
 namespace cse210_05.Game.Scripting
 {
-    /// <summary>
-    /// <para>An update action that handles interactions between the actors.</para>
-    /// <para>
-    /// The responsibility of HandleCollisionsAction is to handle the situation when the snake 
-    /// collides with the food, or the snake collides with its segments, or the game is over.
-    /// </para>
-    /// </summary>
     public class HandleCollisionsAction : Action
     {
         private bool isGameOver = false;
@@ -36,29 +28,29 @@ namespace cse210_05.Game.Scripting
         }
 
         /// <summary>
-        /// Sets the game over flag if the snake collides with one of its segments.
+        /// Sets the game over flag if the cycle collides with one of its segments.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Cycle cycle1 = (Cycle)cast.GetFirstActor("cycle1");
-            Cycle cycle2 = (Cycle)cast.GetFirstActor("cycle2");
-            Actor head1 = cycle1.GetHead();
-            Actor head2 = cycle2.GetHead();
-            List<Actor> body1 = cycle1.GetBody();
-            List<Actor> body2 = cycle2.GetBody();
+            Cycle cycle_1 = (Cycle)cast.GetFirstActor("cycle_1");
+            Cycle cycle_2 = (Cycle)cast.GetFirstActor("cycle_2");
+            Actor head_1 = cycle_1.GetHead();
+            Actor head_2 = cycle_2.GetHead();
+            List<Actor> body_1 = cycle_1.GetBody();
+            List<Actor> body_2 = cycle_2.GetBody();
 
-            foreach (Actor segment in body1)
+            foreach (Actor segment in body_1)
             {
-                if (segment.GetPosition().Equals(head2.GetPosition()))
+                if (segment.GetPosition().Equals(head_2.GetPosition()))
                 {
                     isGameOver = true;
                 }
             }
 
-            foreach (Actor segment in body2)
+            foreach (Actor segment in body_2)
             {
-                if (segment.GetPosition().Equals(head1.GetPosition()))
+                if (segment.GetPosition().Equals(head_1.GetPosition()))
                 {
                     isGameOver = true;
                 }
@@ -89,6 +81,5 @@ namespace cse210_05.Game.Scripting
                 }
             }
         }
-
     }
 }
